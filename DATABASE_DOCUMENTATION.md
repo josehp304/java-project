@@ -23,8 +23,8 @@ This document provides a comprehensive overview of the database schema used in t
 | **Database Type** | MySQL |
 | **Connection Host** | localhost |
 | **Default Port** | 3306 |
-| **Default Username** | root |
-| **Default Password** | (empty) |
+
+> **⚠️ Security Note**: Database credentials should be configured securely and never committed to version control. For development, refer to `DatabaseManager.java` for connection settings. In production, use environment variables or a secure configuration management system for credentials.
 
 **Summary**: The Expense Manager database is designed to store and manage personal expense records. It follows a simple, single-table design optimized for CRUD (Create, Read, Update, Delete) operations on expense entries.
 
@@ -343,11 +343,11 @@ The current single-table design can be extended to support additional features:
 
 ## Notes
 
-- The database uses MySQL with XAMPP server as the default setup
-- Connection is configured for localhost with default XAMPP credentials
+- **Development Setup**: The database uses MySQL with XAMPP server for local development. For production deployments, use a dedicated MySQL server with proper security configurations.
 - All dates are stored in YYYY-MM-DD format
 - Monetary amounts use DECIMAL(10,2) for precise financial calculations
 - Timestamps are automatically managed by MySQL for auditing purposes
+- **Security**: Always use strong, unique passwords and restrict database user permissions in production environments
 
 ---
 
